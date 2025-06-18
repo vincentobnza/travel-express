@@ -5,7 +5,7 @@ export default function PassengerLayout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow bg-gray-900 ">
+      <main className="flex-grow bg-gray-800 ">
         <Outlet />
       </main>
       <Footer />
@@ -29,7 +29,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="w-full bg-green-600 h-20 flex items-center justify-between px-2 md:px-12 relative">
+    <div className="w-full bg-green-800 h-20 flex items-center justify-between px-2 md:px-12 relative">
       {/* background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30 "
@@ -54,13 +54,13 @@ const Navbar = () => {
 
       <ul className="flex items-center z-5">
         {list.map((item, index) => (
-          <li key={index} className="inline-block mx-2">
+          <li key={index} className="inline-block mx-4">
             <NavLink
               to={item.link}
               className={({ isActive }) =>
                 isActive
                   ? "text-white font-bold"
-                  : "text-gray-200 hover:text-white"
+                  : "text-gray-200 hover:text-white hover:underline"
               }
             >
               {item.name}
