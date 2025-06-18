@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import PrivateRoute from "../components/PrivateRoute";
 
 const Passengers = lazy(() => import("../pages/passengers/index"));
 const PassengerLayout = lazy(() => import("../layout/passenger.layout"));
@@ -6,11 +7,17 @@ const PassengerLayout = lazy(() => import("../layout/passenger.layout"));
 const passengersRoutes = [
   {
     path: "/",
-    element: <PassengerLayout />,
+    element: <PrivateRoute roles={["passenger", "admin"]} />,
     children: [
       {
         path: "",
-        element: <Passengers />,
+        element: <PassengerLayout />,
+        children: [
+          {
+            path: "",
+            element: <Passengers />,
+          },
+        ],
       },
     ],
   },
