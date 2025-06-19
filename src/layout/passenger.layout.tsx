@@ -29,7 +29,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="w-full bg-green-800 h-20 flex items-center justify-between px-2 md:px-12 relative">
+    <div className="w-full bg-green-800 h-16 flex items-center justify-between px-2 md:px-12 relative">
       {/* background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30 "
