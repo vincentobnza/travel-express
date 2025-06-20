@@ -287,7 +287,7 @@ export default function AboutUs() {
 
         {/* Mission & Vision */}
         <div className="mb-16 grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 p-8 shadow-none">
+          <div className="rounded-xl border border-zinc-200 bg-white p-8 shadow-none">
             <div className="mb-6 flex items-center gap-3">
               <div className="rounded-lg bg-emerald-100 p-3">
                 <Waves className="h-6 w-6 text-emerald-600" />
@@ -300,7 +300,7 @@ export default function AboutUs() {
               innovative booking solutions and professional service standards.
             </p>
           </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 p-8 shadow-none">
+          <div className="rounded-xl border border-zinc-200 bg-white p-8 shadow-none">
             <div className="mb-6 flex items-center gap-3">
               <div className="rounded-lg bg-blue-100 p-3">
                 <Anchor className="h-6 w-6 text-blue-600" />
