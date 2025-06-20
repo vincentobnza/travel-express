@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import NavbarBackground from "../assets/navbar-background.jpg";
 
 export default function PassengerLayout() {
@@ -38,7 +38,7 @@ const Navbar = () => {
         }}
       />
       {/* logo */}
-      <div className="flex items-center gap-4 text-white z-5">
+      <Link to="/" className="flex items-center gap-4 text-white z-5">
         <img
           src="https://cdn-icons-png.flaticon.com/128/2878/2878877.png"
           alt="Logo"
@@ -50,7 +50,7 @@ const Navbar = () => {
             SHIPPING LINES
           </h1>
         </div>
-      </div>
+      </Link>
 
       <ul className="flex items-center z-5">
         {list.map((item, index) => (
