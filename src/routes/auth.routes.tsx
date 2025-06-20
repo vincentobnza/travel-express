@@ -5,15 +5,15 @@ const SignupPage = lazy(() => import("../pages/SignupPage"));
 const UnauthorizedPage = lazy(() => import("../pages/UnauthorizedPage"));
 const authRoutes = [
   {
-    path: "/login",
+    path: "login",
     element: <LoginPage />,
   },
   {
-    path: "/signup",
+    path: "signup",
     element: <SignupPage />,
   },
   {
-    path: "/unauthorized",
+    path: "unauthorized",
     element: <UnauthorizedPage />,
   },
 ];

@@ -8,23 +8,24 @@ const ContactUs = lazy(() => import("../pages/ContactUs"));
 
 const globalRoutes = [
   {
-    name: "/",
+    path: "/",
     element: <GlobalLayout />,
     children: [
       {
-        name: "",
+        index: true,
+        path: "",
         element: <Homepage />,
       },
       {
-        name: "/terms-and-conditions",
+        path: "terms-and-conditions",
         element: <TermsAndConditions />,
       },
       {
-        name: "/about-us",
+        path: "about-us",
         element: <AboutUs />,
       },
       {
-        name: "/contact-us",
+        path: "contact-us",
         element: <ContactUs />,
       },
     ],

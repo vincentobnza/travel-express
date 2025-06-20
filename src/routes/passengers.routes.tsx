@@ -1,30 +1,16 @@
 import { lazy } from "react";
-const Passengers = lazy(() => import("../pages/index"));
-const PassengerLayout = lazy(() => import("../layout/global.layout"));
-const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
-const AboutUs = lazy(() => import("../pages/AboutUs"));
-const ContactUs = lazy(() => import("../pages/ContactUs"));
+import PassengerLayout from "../layout/passenger.layout";
+const PassengerDashboard = lazy(() => import("../pages/passengers/index"));
 
 const passengersRoutes = [
   {
-    path: "/",
+    path: "/dashboard",
     element: <PassengerLayout />,
     children: [
       {
+        index: true,
         path: "",
-        element: <Passengers />,
-      },
-      {
-        path: "/terms-and-conditions",
-        element: <TermsAndConditions />,
-      },
-      {
-        path: "/about-us",
-        element: <AboutUs />,
-      },
-      {
-        path: "/contact-us",
-        element: <ContactUs />,
+        element: <PassengerDashboard />,
       },
     ],
   },

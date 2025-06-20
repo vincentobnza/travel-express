@@ -51,14 +51,14 @@ export default function Navbar() {
 const list = [
   {
     name: "Terms and Conditions",
-    link: "/terms-and-conditions",
+    link: "terms-and-conditions",
   },
   {
     name: "About Us",
-    link: "/about-us",
+    link: "about-us",
   },
   {
     name: "Contact Us",
-    link: "/contact-us",
+    link: "contact-us",
   },
 ];
