@@ -20,7 +20,7 @@ export default function TextField({
   ...rest
 }: TextFieldProps) {
   return (
-    <div className={cn("flex flex-col space-y-2", className)}>
+    <div className={cn("flex flex-col space-y-1.5", className)}>
       <div className="flex items-center gap-2.5">
         {labelIcon && (
           <span className="text-zinc-700">
@@ -43,7 +43,7 @@ export default function TextField({
       <Input
         required={required}
         className={cn(
-          "h-12 rounded-xl border-2 bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200",
+          "h-10 rounded border-2 bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200",
           "focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 focus:bg-white",
           "hover:border-gray-400",
           error
