@@ -1,5 +1,5 @@
 import { lazy } from "react";
-const Passengers = lazy(() => import("../pages/passengers/index"));
+const Passengers = lazy(() => import("../pages/index"));
 const PassengerLayout = lazy(() => import("../layout/passenger.layout"));
 const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
 const AboutUs = lazy(() => import("../pages/AboutUs"));
