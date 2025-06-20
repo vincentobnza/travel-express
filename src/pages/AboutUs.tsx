@@ -236,7 +236,7 @@ export default function AboutUs() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
             Why Choose Us
           </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {features.map(renderFeatureCard)}
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function AboutUs() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
             Our Services
           </h2>
-          <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-1 lg:grid-cols-3">
             {services.map(renderServiceCard)}
           </div>
         </div>

@@ -28,16 +28,10 @@ export default function Hero() {
                   <div className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-emerald-400"></div>
                 </span>
               </h1>
-              <p className="mx-auto max-w-3xl text-lg leading-relaxed font-light text-gray-200 sm:text-xl md:text-2xl">
+              <p className="text-md mx-auto max-w-3xl leading-relaxed font-semibold text-gray-200">
                 Effortless Ferry Booking Between Palawan and Mindoro
               </p>
             </div>
-
-            {/* Subtitle */}
-            <p className="mx-auto max-w-2xl text-base text-gray-300 sm:text-lg">
-              Skip the lines, book anytime, travel secure. Your ferry ticket is
-              just a click away.
-            </p>
 
             {/* CTA Button */}
             <div className="flex flex-col items-center justify-center gap-8 pt-4">
@@ -58,7 +52,7 @@ export default function Hero() {
                 </svg>
               </button>
 
-              <Link to="/admin" className="text-md text-white underline">
+              <Link to="/admin" className="text-sm font-bold text-white">
                 Admin Dashboard
               </Link>
             </div>
