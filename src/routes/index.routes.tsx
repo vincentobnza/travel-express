@@ -1,26 +1,14 @@
-import { lazy } from "react";
+// ROUTES
 import passengersRoutes from "./passengers.routes";
 import adminRoutes from "./admin.routes";
+import globalRoutes from "./global.routes";
+import authRoutes from "./auth.routes";
 
-const LoginPage = lazy(() => import("../pages/LoginPage"));
-const SignupPage = lazy(() => import("../pages/SignupPage"));
-const UnauthorizedPage = lazy(() => import("../pages/UnauthorizedPage"));
-
-const authRoutes = [
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/signup",
-    element: <SignupPage />,
-  },
-  {
-    path: "/unauthorized",
-    element: <UnauthorizedPage />,
-  },
+const allRoutes = [
+  ...globalRoutes,
+  ...passengersRoutes,
+  ...adminRoutes,
+  ...authRoutes,
 ];
-
-const allRoutes = [...passengersRoutes, ...adminRoutes, ...authRoutes];
 
 export default allRoutes;

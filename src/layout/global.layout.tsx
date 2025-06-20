@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Outlet } from "react-router-dom";
 
-export default function PassengerLayout() {
+export default function GlobalLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
