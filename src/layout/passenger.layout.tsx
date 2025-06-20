@@ -3,9 +3,9 @@ import NavbarBackground from "../assets/navbar-background.jpg";
 
 export default function PassengerLayout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-grow bg-gray-800 ">
+      <main className="flex-grow bg-gray-800">
         <Outlet />
       </main>
       <Footer />
@@ -29,52 +29,54 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="w-full bg-green-800 h-16 flex items-center justify-between px-2 md:px-12 relative">
-      {/* background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30 "
-        style={{
-          backgroundImage: `url(${NavbarBackground})`,
-        }}
-      />
-      {/* logo */}
-      <Link to="/" className="flex items-center gap-4 text-white z-5">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/2878/2878877.png"
-          alt="Logo"
-          className="h-10 w-10 mr-2"
+    <div className="sticky top-0 z-50">
+      <div className="relative flex h-16 w-full items-center justify-between bg-green-800 px-2 md:px-12">
+        {/* background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: `url(${NavbarBackground})`,
+          }}
         />
-        <div className="flex flex-col gap-2 font-bold">
-          <h1>
-            CENAMARK <br />
-            SHIPPING LINES
-          </h1>
-        </div>
-      </Link>
+        {/* logo */}
+        <Link to="/" className="z-5 flex items-center gap-4 text-white">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2878/2878877.png"
+            alt="Logo"
+            className="mr-2 h-10 w-10"
+          />
+          <div className="flex flex-col gap-2 font-bold">
+            <h1>
+              CENAMARK <br />
+              SHIPPING LINES
+            </h1>
+          </div>
+        </Link>
 
-      <ul className="flex items-center z-5">
-        {list.map((item, index) => (
-          <li key={index} className="inline-block mx-4">
-            <NavLink
-              to={item.link}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-bold"
-                  : "text-gray-200 hover:text-white hover:underline"
-              }
-            >
-              {item.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+        <ul className="z-5 flex items-center">
+          {list.map((item, index) => (
+            <li key={index} className="mx-4 inline-block text-sm">
+              <NavLink
+                to={item.link}
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold text-white"
+                    : "text-gray-200 hover:text-white hover:underline"
+                }
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center p-8">
+    <footer className="bg-gray-800 p-8 text-center text-white">
       <p>
         &copy; {new Date().getFullYear()} CENAMARK SHIPPING LINES. All rights
         reserved.

@@ -5,8 +5,7 @@ import { useActionState } from "react";
 
 export default function ContactUs() {
   return (
-    <div className="w-full min-h-screen bg-white flex p-10 flex-col items-center">
-      <h1 className="text-3xl font-semibold mb-8">GET IN TOUCH </h1>
+    <div className="w-full min-h-screen bg-white flex p-12 flex-col items-center">
       <div className="w-full max-w-screen-xl mx-auto flex space-x-8 p-5">
         <RightBanner />
         <Form />
