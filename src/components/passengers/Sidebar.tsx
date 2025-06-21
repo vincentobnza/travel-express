@@ -1,97 +1,15 @@
-import { useState } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import {
-  X,
-  Home,
-  ListCheck,
-  BadgeInfo,
-  History,
-  LogOut,
-  Ship,
-  Ticket,
-} from "lucide-react";
-import { useAuth } from "../lib/useAuth";
-import TopNavigation from "@/components/passengers/TopNavigation";
+import { LogOut, Ship, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { navigationSections } from "../data/sidebar";
+import UserFeedback from "./cards/UserFeedback";
 
-export default function PassengerLayout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleSignOut = async () => {
-    await logout();
-    navigate("/login");
-  };
-
-  return (
-    <div className="flex min-h-screen bg-zinc-50">
-      {/* Sidebar */}
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-        onSignOut={handleSignOut}
-      />
-
-      {/* Main Content */}
-      <div className="flex flex-1 flex-col lg:ml-64">
-        {/* Top Navigation */}
-        <TopNavigation
-          onMenuClick={() => setSidebarOpen(true)}
-          user={user}
-          onSignOut={handleSignOut}
-        />
-
-        {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-8">
-          <div className="mx-auto max-w-7xl">
-            <Outlet />
-          </div>
-        </main>
-      </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {sidebarOpen && (
-        <div
-          className="bg-opacity-50 fixed inset-0 z-40 bg-black lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-    </div>
-  );
-}
-
-const Sidebar = ({
-  isOpen,
-  onClose,
-  onSignOut,
-}: {
+type SidebarProps = {
   isOpen: boolean;
   onClose: () => void;
   onSignOut: () => void;
-}) => {
-  const navigationSections = [
-    {
-      label: "Dashboard",
-      items: [{ name: "Overview", href: "overview", icon: Home }],
-    },
-    {
-      label: "Bookings",
-      items: [
-        {
-          name: "Reservation List",
-          href: "reservation-list",
-          icon: ListCheck,
-        },
-        { name: "Booking History", href: "booking-history", icon: History },
-        { name: "My Ticket", href: "my-ticket", icon: Ticket },
-      ],
-    },
-    {
-      label: "Support",
-      items: [{ name: "Help Center", href: "help-center", icon: BadgeInfo }],
-    },
-  ];
+};
 
+export default function Sidebar({ isOpen, onClose, onSignOut }: SidebarProps) {
   return (
     <>
       {/* Desktop Sidebar */}
@@ -139,41 +57,8 @@ const Sidebar = ({
             ))}
           </nav>
           {/* User Feedback Card */}
-          <div className="mx-4 mb-6">
-            <div className="rounded-lg border border-green-100 bg-gradient-to-br from-emerald-50 to-white p-4">
-              <div className="mb-3 flex items-center">
-                <div className="flex-shrink-0">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100">
-                    <svg
-                      className="h-4 w-4 text-emerald-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-3">
-                  <h4 className="text-sm font-semibold text-emerald-900">
-                    Share Your Experience
-                  </h4>
-                </div>
-              </div>
-              <p className="mb-3 text-xs leading-relaxed text-emerald-700">
-                Help us improve our services by sharing your feedback and
-                suggestions.
-              </p>
-              <button className="w-full rounded-md bg-emerald-600 px-3 py-2.5 text-xs font-medium text-white transition-colors duration-200 hover:bg-emerald-700 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1 focus:outline-none">
-                Give Feedback
-              </button>
-            </div>
-          </div>
+          <UserFeedback />
+          {/* SIGNOUT OR LOGOUT BUTTON */}
           <div className="flex flex-shrink-0 border-t border-zinc-200 p-4">
             <button
               onClick={onSignOut}
@@ -291,4 +176,4 @@ const Sidebar = ({
       </div>
     </>
   );
-};
+}
