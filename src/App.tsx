@@ -5,5 +5,9 @@ import Loading from "./components/Loading";
 
 export default function App() {
   const element = useRoutes(allRoutes);
-  return <Suspense fallback={<Loading />}>{element}</Suspense>;
+  return (
+    <>
+      <Suspense fallback={<Loading />}>{element}</Suspense>
+    </>
+  );
 }

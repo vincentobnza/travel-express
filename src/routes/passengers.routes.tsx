@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import PassengerLayout from "../layout/passenger.layout";
 const PassengerDashboard = lazy(() => import("../pages/passengers/index"));
+const Booking = lazy(() => import("../pages/passengers/booking"));
 
 const passengersRoutes = [
   {
@@ -11,6 +12,10 @@ const passengersRoutes = [
         index: true,
         path: "",
         element: <PassengerDashboard />,
+      },
+      {
+        path: "booking",
+        element: <Booking />,
       },
     ],
   },

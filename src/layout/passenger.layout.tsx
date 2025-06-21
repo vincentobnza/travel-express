@@ -84,7 +84,7 @@ const Sidebar = ({
       items: [
         {
           name: "Reservation List",
-          href: "/reservation-list",
+          href: "reservation-list",
           icon: ListCheck,
         },
         { name: "Booking History", href: "/booking-history", icon: History },
@@ -148,7 +148,7 @@ const Sidebar = ({
           </nav>
           {/* User Feedback Card */}
           <div className="mx-4 mb-6">
-            <div className="rounded-lg border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4">
+            <div className="rounded-lg border border-green-100 bg-gradient-to-br from-emerald-50 to-white p-4">
               <div className="mb-3 flex items-center">
                 <div className="flex-shrink-0">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100">

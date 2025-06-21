@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Ship,
-  Users,
   Calendar as CalendarIcon,
   DollarSign,
   Bell,
@@ -11,10 +10,12 @@ import {
   Star,
   TrendingUp,
   Book,
-  ArrowUpRight,
+  Lightbulb,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+import { Link } from "react-router-dom";
 
 // Hero Card Component
 const HeroCard = () => {
@@ -25,30 +26,32 @@ const HeroCard = () => {
       <div className="relative flex items-center justify-between">
         <div className="flex-1">
           <div className="mb-4 flex items-center space-x-2">
-            <Ship className="h-8 w-8 text-emerald-600" />
+            <Ship className="h-8 w-8 text-emerald-800" />
             <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700">
               Featured Service
             </span>
           </div>
-          <h1 className="mb-2 text-3xl font-bold text-zinc-900">
+          <h1 className="mb-1 text-3xl font-bold text-zinc-900">
             Skip the line.
           </h1>
-          <h2 className="mb-2 text-3xl font-bold text-zinc-900">
+          <h2 className="mb-1 text-3xl font-bold text-zinc-900">
             Secure your Seat.
           </h2>
           <h3 className="mb-6 text-3xl font-bold text-zinc-900">
             Sail with ease!
           </h3>
-          <p className="mb-8 max-w-md text-zinc-600">
+          <p className="mb-8 max-w-md text-sm text-zinc-600">
             Experience hassle-free ferry booking with Cenamark Shipping Lines.
             Book instantly and enjoy premium comfort on every journey.
           </p>
 
           <div className="flex items-center space-x-4">
-            <Button className="h-12 px-10 text-sm has-[>svg]:px-7">
-              <Book />
-              Book Now
-            </Button>
+            <Link to="/dashboard/booking">
+              <Button className="h-11 px-10 text-sm has-[>svg]:px-6">
+                <Book />
+                Book Now
+              </Button>
+            </Link>
             <div className="flex items-center space-x-1 text-sm text-zinc-500">
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
               <span className="font-medium text-zinc-700">4.9</span>
@@ -77,49 +80,6 @@ const HeroCard = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-// Booking List Card Component
-const BookingListCard = ({ bookingList }: { bookingList: string[] }) => {
-  return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Users className="h-5 w-5 text-emerald-600" />
-            <h3 className="text-lg font-semibold text-zinc-900">
-              BOOKING LIST
-            </h3>
-          </div>
-          <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700">
-            {bookingList.length} passengers
-          </span>
-        </div>
-      </div>
-      <div className="space-y-3">
-        {bookingList.map((name, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-zinc-50"
-          >
-            <div className="flex items-center space-x-3">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold text-emerald-700">
-                {index + 1}
-              </span>
-              <span className="text-sm font-medium text-zinc-700">{name}</span>
-            </div>
-            <div className="h-2 w-2 rounded-full bg-green-400"></div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-4 border-t border-zinc-100 pt-4">
-        <Button className="h-12 w-full rounded" variant="outline">
-          <ArrowUpRight />
-          View All Bookings
-        </Button>
       </div>
     </div>
   );
@@ -237,7 +197,7 @@ const CalendarCard = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <CalendarIcon className="h-5 w-5 text-zinc-600" />
-            <h3 className="text-lg font-semibold text-zinc-900">
+            <h3 className="text-lg font-semibold text-zinc-900 uppercase">
               Travel Calendar
             </h3>
           </div>
@@ -340,18 +300,52 @@ const AnnouncementCard = () => {
   );
 };
 
+// Travel Tips Card Component
+const TravelTipsCard = () => {
+  const tips = [
+    "Arrive at least 30 minutes before departure",
+    "Bring valid ID for verification",
+    "Check weather conditions before travel",
+    "Keep your belongings secure during the trip",
+  ];
+
+  return (
+    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
+      <div className="mb-4 border-b border-zinc-200 pb-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Lightbulb className="h-5 w-5 text-yellow-600" />
+            <h3 className="text-lg font-semibold text-zinc-900">TRAVEL TIPS</h3>
+          </div>
+          <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-700">
+            Helpful Tips
+          </span>
+        </div>
+      </div>
+      <div className="space-y-3">
+        {tips.map((tip, index) => (
+          <div
+            key={index}
+            className="flex items-start space-x-3 rounded-lg border border-zinc-200 bg-zinc-50 p-3 transition-colors hover:bg-zinc-100"
+          >
+            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-yellow-600" />
+            <span className="text-sm text-zinc-700">{tip}</span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 border-t border-zinc-100 pt-4">
+        <div className="flex items-center justify-center space-x-1 text-xs text-zinc-500">
+          <Lightbulb className="h-3 w-3" />
+          <span>More tips available in our travel guide</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Main Dashboard Component
 export default function PassengerDashboard() {
   const [date, setDate] = useState<Date | undefined>(new Date());
-
-  const bookingList = [
-    "Maue",
-    "Jasser",
-    "Rochelle",
-    "Arthur",
-    "Carlos",
-    "Bahe Magis",
-  ];
 
   const pricing = [
     { type: "REGULAR", price: "₱820" },
@@ -359,16 +353,15 @@ export default function PassengerDashboard() {
     { type: "STUDENT", price: "₱650" },
     { type: "SENIOR CITIZEN", price: "₱656" },
   ];
-
   return (
     <div className="space-y-6">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-12">
           <HeroCard />
-          <BookingListCard bookingList={bookingList} />
           <ScheduleCard />
           <TicketPricingCard pricing={pricing} />
           <CalendarCard date={date} setDate={setDate} />
+          <TravelTipsCard />
           <AnnouncementCard />
         </div>
       </div>
