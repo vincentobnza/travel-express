@@ -349,14 +349,14 @@ const TopNavigation = ({
           <div className="relative">
             <button
               onClick={() => setShowUserMenu(!showUserMenu)}
-              className="flex items-center gap-3 rounded-full bg-white p-2 text-sm hover:bg-zinc-50 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:outline-none"
+              className="flex items-center gap-2 rounded-full bg-white p-2 text-sm hover:bg-zinc-50 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:outline-none"
             >
               {" "}
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
-                <UserIcon className="h-5 w-5 text-white" />
+              <div className="justify-cente flex h-8 w-8 items-center text-zinc-700">
+                <UserIcon className="size-6" />
               </div>
               <span className="hidden font-medium text-zinc-700 lg:block">
-                {user?.email?.split("@")[0] || "Passenger"}
+                {user?.email?.split("@")[0] || ""}
               </span>
             </button>
 
