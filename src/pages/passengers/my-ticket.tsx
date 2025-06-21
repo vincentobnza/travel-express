@@ -50,7 +50,7 @@ const TicketCard = ({ ticket }: { ticket: (typeof tickets)[0] }) => {
   return (
     <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
       {/* Ticket Header */}
-      <div className="bg-gradient-to-r from-zinc-100 to-white px-6 py-4 text-zinc-800">
+      <div className="hashed-background border-b border-zinc-200 bg-zinc-50 px-6 py-4 text-zinc-800">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Ship className="h-6 w-6" />

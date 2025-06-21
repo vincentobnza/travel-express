@@ -7,6 +7,16 @@
   font-family: "Outfit", sans-serif;
 }
 
+.hashed-background {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.1) 8px,
+    rgba(0, 0, 0, 0.1) 9px
+  );
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

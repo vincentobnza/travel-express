@@ -46,7 +46,7 @@ const HeroCard = () => {
 
           <div className="flex items-center space-x-4">
             <Link to="/dashboard/booking">
-              <Button className="h-11 px-10 text-sm has-[>svg]:px-6">
+              <Button className="h-11 bg-gradient-to-br from-zinc-700 to-zinc-800 px-10 text-sm shadow-xl has-[>svg]:px-6">
                 <Book />
                 Book Now
               </Button>
@@ -113,7 +113,7 @@ const ScheduleCard = () => {
       <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center space-x-2">
           <Clock className="h-5 w-5 text-blue-600" />
-          <h3 className="text-lg font-semibold text-zinc-900">Schedule</h3>
+          <h3 className="text-lg font-semibold text-zinc-900">SCHEDULE</h3>
         </div>
       </div>
       <div className="space-y-3 p-4">

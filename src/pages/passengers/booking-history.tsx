@@ -86,7 +86,7 @@ export default function BookingHistory() {
       {/* Table Section */}
       <div className="w-full overflow-hidden rounded-lg border border-zinc-200">
         <Table>
-          <TableCaption className="bg-zinc-50 py-3 text-sm text-zinc-600">
+          <TableCaption className="hashed-background border-t border-zinc-200 bg-zinc-50 p-6 text-sm text-zinc-600">
             Your complete ferry booking history and travel records.
           </TableCaption>
           <TableHeader>

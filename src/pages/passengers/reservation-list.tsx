@@ -91,7 +91,7 @@ export default function ReservationList() {
       {/* Table Section */}
       <div className="w-full overflow-hidden rounded-lg border border-zinc-200">
         <Table>
-          <TableCaption className="bg-zinc-50 py-3 text-sm text-zinc-600">
+          <TableCaption className="hashed-background border-t border-zinc-200 bg-zinc-50 p-6 text-sm text-zinc-600">
             Your recent ferry reservations and booking history.
           </TableCaption>
           <TableHeader>
