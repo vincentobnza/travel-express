@@ -109,42 +109,57 @@ const HeroCard = () => {
 // Schedule Card Component
 const ScheduleCard = () => {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
+    <div className="rounded-lg border border-zinc-200 bg-white lg:col-span-4">
+      <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center space-x-2">
           <Clock className="h-5 w-5 text-blue-600" />
-          <h3 className="text-lg font-semibold text-zinc-900">SCHEDULE</h3>
+          <h3 className="text-lg font-semibold text-zinc-900">Schedule</h3>
         </div>
       </div>
-      <div className="space-y-3">
-        <div className="rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-indigo-50 p-4">
+      <div className="space-y-3 p-4">
+        <div className="rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 p-5 shadow-lg">
           <div className="mb-3 flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4 text-blue-600" />
-              <span className="font-semibold text-zinc-900">
-                Conception Port
-              </span>
+              <MapPin className="h-4 w-4 text-white" />
+              <span className="font-semibold text-white">Conception Port</span>
             </div>
-            <span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700">
+            <span className="rounded-full bg-white px-2 py-1 text-xs font-bold text-blue-700">
               Active Route
             </span>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <CalendarIcon className="h-4 w-4 text-zinc-500" />
-              <span className="text-sm text-zinc-600">March 14, 2025</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <div className="h-2 w-2 animate-pulse rounded-full bg-green-400"></div>
-              <span className="text-xs font-medium text-green-600">
-                On Time
+              <CalendarIcon className="size-3.5 text-white" />
+              <span className="text-xs font-semibold text-white">
+                March 14, 2025
               </span>
+            </div>
+            <div className="mr-1 flex items-center space-x-1">
+              <div className="h-2 w-2 animate-pulse rounded-full bg-amber-300"></div>
+              <span className="text-xs font-bold text-amber-300">On Time</span>
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 p-5 text-sm">
-          <span className="text-zinc-500">Next Departure:</span>
-          <span className="font-semibold text-zinc-900">8:30 AM</span>
+        <div className="flex flex-col gap-3 rounded-lg bg-gradient-to-br from-zinc-600 to-zinc-800 p-5 text-sm shadow-lg">
+          <div className="flex w-full items-center justify-between">
+            <p className="flex items-center gap-2 font-semibold text-white">
+              <Ship className="inline-flex size-4" />
+              Next Departure:
+            </p>
+            <span className="rounded-full border border-amber-400/40 bg-amber-400/20 px-2 py-0.5 font-semibold text-amber-300">
+              8:30 AM
+            </span>
+          </div>
+
+          <div className="flex w-full items-center justify-between">
+            <p className="flex items-center gap-2 text-xs font-semibold text-zinc-300">
+              <Clock className="inline-flex size-4" />
+              Estimated Travel Time:
+            </p>
+            <span className="mr-1 text-xs font-bold text-zinc-200">
+              2h 30min
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -158,8 +173,8 @@ const TicketPricingCard = ({
   pricing: Array<{ type: string; price: string }>;
 }) => {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
+    <div className="rounded-lg border border-zinc-200 bg-white lg:col-span-4">
+      <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <DollarSign className="h-5 w-5 text-green-600" />
@@ -167,12 +182,12 @@ const TicketPricingCard = ({
               TICKET PRICING
             </h3>
           </div>
-          <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
+          <span className="rounded-full border border-green-400 bg-green-50 px-2 py-1 text-xs font-medium text-green-700">
             Current Rates
           </span>
         </div>
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 p-4">
         {pricing.map((item, index) => (
           <div
             key={index}
@@ -213,8 +228,8 @@ const CalendarCard = ({
   setDate: (date: Date | undefined) => void;
 }) => {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
+    <div className="rounded-lg border border-zinc-200 bg-white lg:col-span-4">
+      <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <CalendarIcon className="h-5 w-5 text-zinc-600" />
@@ -227,15 +242,16 @@ const CalendarCard = ({
           </span>
         </div>
       </div>
+      <div className="p-4">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="w-full rounded-lg border-0 p-0"
+        />
+      </div>
 
-      <Calendar
-        mode="single"
-        selected={date}
-        onSelect={setDate}
-        className="w-full rounded-lg border-0 p-0"
-      />
-
-      <div className="mt-4 border-t border-zinc-100 pt-4">
+      <div className="mt-4 border-t border-zinc-100 p-4 pt-4">
         <div className="flex items-center justify-between text-xs">
           <div className="flex items-center space-x-1">
             <div className="h-2 w-2 rounded-full bg-zinc-600"></div>
@@ -253,8 +269,8 @@ const CalendarCard = ({
 // Announcement Card Component
 const AnnouncementCard = () => {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-8">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
+    <div className="rounded-lg border border-zinc-200 bg-white lg:col-span-8">
+      <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Bell className="h-5 w-5 text-amber-600" />
@@ -268,53 +284,49 @@ const AnnouncementCard = () => {
           </span>
         </div>
       </div>
-      <div className="rounded-lg border border-zinc-200 bg-gradient-to-r from-amber-50 to-white p-4">
-        <div className="flex items-start space-x-3">
-          <div className="flex-shrink-0">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
-              <Bell className="h-4 w-4 text-amber-600" />
-            </div>
-          </div>
-          <div className="flex-1">
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-sm font-medium text-amber-700">
-                Date: February 5, 2025
-              </span>
-              <span className="rounded-full bg-amber-100 px-2 py-1 text-xs text-amber-600">
-                New Schedule
-              </span>
-            </div>
-            <div className="mb-3">
-              <span className="text-sm font-semibold text-zinc-700">
-                Dear Passengers,
-              </span>
-            </div>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-700">
-              Please be informed that Cenamark Shipping Lines will be
-              implementing a new schedule for booking service on the Sea lines
-              Quin. Booking now starting next month. The change is being made to
-              improve service efficiency and accommodate more passengers.
-            </p>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4 text-xs text-zinc-500">
-                <span>📅 Effective: March 1, 2025</span>
-                <span>🚢 All Routes Affected</span>
+      <div className="p-4">
+        <div className="rounded-lg border border-zinc-200 bg-gradient-to-r from-amber-50 to-white p-4">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
+                <Bell className="h-4 w-4 text-amber-600" />
               </div>
-              <button className="flex items-center space-x-1 text-sm font-medium text-amber-600 hover:text-amber-700">
-                <span>Read More</span>
-                <ArrowRight className="h-3 w-3" />
-              </button>
+            </div>
+            <div className="flex-1">
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-sm font-medium text-amber-700">
+                  Date: February 5, 2025
+                </span>
+                <span className="rounded-full bg-amber-100 px-2 py-1 text-xs text-amber-600">
+                  New Schedule
+                </span>
+              </div>
+              <div className="mb-3">
+                <span className="text-sm font-semibold text-zinc-700">
+                  Dear Passengers,
+                </span>
+              </div>
+              <p className="mb-4 text-sm leading-relaxed text-zinc-700">
+                Please be informed that Cenamark Shipping Lines will be
+                implementing a new schedule for booking service on the Sea lines
+                Quin. Booking now starting next month. The change is being made
+                to improve service efficiency and accommodate more passengers.
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4 text-xs text-zinc-500">
+                  <span>📅 Effective: March 1, 2025</span>
+                  <span>🚢 All Routes Affected</span>
+                </div>
+                <button className="flex items-center space-x-1 text-sm font-medium text-amber-600 hover:text-amber-700">
+                  <span>Read More</span>
+                  <ArrowRight className="h-3 w-3" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-4 flex items-center justify-between text-xs">
-        <span className="text-zinc-500">
+        <div className="mt-4 flex items-center justify-center text-center text-xs">
           For questions, contact customer service
-        </span>
-        <div className="flex items-center space-x-1 text-emerald-600">
-          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
-          <span>System Operational</span>
         </div>
       </div>
     </div>
@@ -331,8 +343,8 @@ const TravelTipsCard = () => {
   ];
 
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6 lg:col-span-4">
-      <div className="mb-4 border-b border-zinc-200 pb-4">
+    <div className="rounded-lg border border-zinc-200 bg-white lg:col-span-4">
+      <div className="mb-4 border-b border-zinc-200 bg-zinc-100 p-4 pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Lightbulb className="h-5 w-5 text-yellow-600" />
@@ -343,7 +355,7 @@ const TravelTipsCard = () => {
           </span>
         </div>
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 p-4">
         {tips.map((tip, index) => (
           <div
             key={index}

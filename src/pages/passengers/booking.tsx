@@ -184,8 +184,10 @@ const Form = () => {
                     095647365748
                   </span>
                   <Button
+                    type="button"
                     size="sm"
-                    className="h-8 rounded border border-zinc-200 bg-zinc-50 px-3 text-xs text-zinc-600 hover:bg-zinc-100"
+                    variant="outline"
+                    className="h-8 rounded px-3 text-xs text-zinc-600 hover:bg-zinc-100"
                     onClick={() => {
                       navigator.clipboard.writeText("095647365748");
                       toast.success("Reference number copied!");
@@ -205,8 +207,8 @@ const Form = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex flex-col items-center justify-center gap-4 rounded border-4 border-dashed border-zinc-200 bg-zinc-50 p-12">
-              <Button className="rounded bg-zinc-800">
+            <div className="mt-4 flex flex-col items-center justify-center gap-4 rounded border border-zinc-200 bg-zinc-50 p-12">
+              <Button className="rounded" variant="outline">
                 <Upload />
                 Upload
               </Button>

@@ -52,7 +52,7 @@ export default function PassengerLayout() {
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className="bg-opacity-50 fixed inset-0 z-40 bg-black lg:hidden"
+          className="bg-opacity-50 fixed inset-0 z-40 bg-zinc-900/10 backdrop-blur lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
