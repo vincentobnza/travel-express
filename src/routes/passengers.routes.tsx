@@ -10,6 +10,7 @@ const BookingHistory = lazy(
 );
 const MyTickets = lazy(() => import("../pages/passengers/my-ticket"));
 const HelpCenter = lazy(() => import("../pages/passengers/help-center"));
+const SeatStatus = lazy(() => import("../pages/passengers/seat-status"));
 
 const passengersRoutes = [
   {
@@ -40,6 +41,11 @@ const passengersRoutes = [
       {
         path: "help-center",
         element: <HelpCenter />,
+      },
+
+      {
+        path: "seat-status",
+        element: <SeatStatus />,
       },
     ],
   },

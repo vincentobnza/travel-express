@@ -42,7 +42,7 @@ export default function Booking() {
         </div>
 
         <Button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/dashboard/seat-status")}
           variant="outline"
           className="rounded"
         >
