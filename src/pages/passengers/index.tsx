@@ -8,7 +8,6 @@ import {
   Clock,
   MapPin,
   Star,
-  TrendingUp,
   Book,
   Lightbulb,
   CheckCircle,
@@ -23,7 +22,7 @@ const HeroCard = () => {
     <div className="relative overflow-hidden rounded-lg border border-zinc-200 bg-gradient-to-br from-teal-50 to-white p-8 lg:col-span-8">
       <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-emerald-100 opacity-20"></div>
       <div className="absolute bottom-0 left-0 -mb-8 -ml-8 h-32 w-32 rounded-full bg-teal-100 opacity-20"></div>
-      <div className="relative flex items-center justify-between">
+      <div className="group relative flex items-center justify-between">
         <div className="flex-1">
           <div className="mb-4 flex items-center space-x-2">
             <Ship className="h-8 w-8 text-emerald-800" />
@@ -60,21 +59,43 @@ const HeroCard = () => {
           </div>
         </div>
 
-        <div className="ml-8 flex-shrink-0">
+        <div className="ml-8 hidden flex-shrink-0 md:flex lg:flex">
           <div className="relative">
             <img
-              src="https://i.natgeofe.com/n/eb6538cf-b879-4307-b3b8-c121b2a7b540/double-outrigger-boats-called-banca-in-palawan-philippines_16x9.jpg"
-              alt="Ferry Boat"
-              className="h-48 w-72 rounded-lg object-cover shadow-lg"
+              src="https://images.pexels.com/photos/18372500/pexels-photo-18372500.jpeg?cs=srgb&dl=pexels-mark-c-728748121-18372500.jpg&fm=jpg"
+              alt="Ferry"
+              className="h-48 w-72 rounded-lg object-cover shadow-2xl transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:grayscale"
             />
-            <div className="absolute -right-4 -bottom-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-lg">
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="h-5 w-5 text-emerald-600" />
+            <div className="absolute -right-4 -bottom-4 rounded-lg border border-zinc-200 bg-white px-4 py-3 shadow-lg transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:-rotate-12">
+              <div className="flex items-center space-x-3">
+                <img
+                  src="https://emojiisland.com/cdn/shop/products/Dizzy_Emoji_Icon_ac9b8e32-707e-4cae-9ea7-5ad1c136e2d9_compact.png?v=1571606089"
+                  alt="happy"
+                  className="size-5"
+                />
                 <div>
                   <div className="text-xs font-semibold text-zinc-900">
                     Fast Booking
                   </div>
                   <div className="text-xs text-zinc-500">2 min average</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -top-4 -left-4 rounded-lg bg-zinc-800 px-4 py-3 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+              <div className="flex items-center space-x-3">
+                <img
+                  src="https://emojiisland.com/cdn/shop/products/Sleeping_Emoji_2_large.png?v=1571606093"
+                  alt="happy"
+                  className="size-5"
+                />
+                <div>
+                  <div className="text-xs font-semibold text-white">
+                    Premium Comfort
+                  </div>
+                  <div className="text-xs text-zinc-400">
+                    Enjoy your journey
+                  </div>
                 </div>
               </div>
             </div>

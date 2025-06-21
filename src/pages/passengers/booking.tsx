@@ -16,6 +16,7 @@ import {
   MoveLeft,
   NotebookTabs,
   PackageCheck,
+  Upload,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -124,7 +125,7 @@ const Form = () => {
 
         <TextField label="Upload your ID" name="id" required type="file" />
 
-        <div className="aspect-video w-full overflow-hidden rounded border border-zinc-200 bg-zinc-50">
+        <div className="aspect-video w-full overflow-hidden rounded border border-zinc-200 bg-zinc-100">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s"
             alt="id"
@@ -146,7 +147,7 @@ const Form = () => {
           </div>
         </div>{" "}
         <div className="w-full rounded-lg border border-zinc-200 bg-white">
-          <div className="w-full border-b border-zinc-200 bg-gradient-to-r from-zinc-50 to-zinc-100/50 px-6 py-4">
+          <div className="w-full border-b border-zinc-200 bg-gradient-to-r from-zinc-100 to-zinc-100/50 px-6 py-4">
             <h2 className="flex items-center gap-3 text-lg font-semibold text-zinc-800">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                 <Banknote className="h-4 w-4 text-blue-600" />
@@ -203,11 +204,20 @@ const Form = () => {
                 </p>
               </div>
             </div>
+
+            <div className="mt-4 flex flex-col items-center justify-center gap-4 rounded border-4 border-dashed border-zinc-200 bg-zinc-50 p-12">
+              <Button className="rounded bg-zinc-800">
+                <Upload />
+                Upload
+              </Button>
+
+              <h4 className="text-xs text-zinc-500">Upload Proof of Payment</h4>
+            </div>
           </div>
         </div>
         <div className="w-full space-y-3">
           <Button
-            className="text-md h-14 w-full rounded-lg bg-zinc-800"
+            className="text-md h-14 w-full rounded-lg bg-gradient-to-r from-emerald-600 to-green-600"
             onClick={() => toast.success("Booking successful!")}
           >
             <PackageCheck />

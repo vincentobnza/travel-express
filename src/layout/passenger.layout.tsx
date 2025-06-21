@@ -12,7 +12,6 @@ import {
   LogOut,
   Ship,
   Search,
-  EqualApproximately,
   Ticket,
 } from "lucide-react";
 import { useAuth } from "../lib/useAuth";
@@ -77,7 +76,7 @@ const Sidebar = ({
   const navigationSections = [
     {
       label: "Dashboard",
-      items: [{ name: "Overview", href: "/dashboard", icon: Home }],
+      items: [{ name: "Overview", href: "overview", icon: Home }],
     },
     {
       label: "Bookings",
@@ -87,16 +86,13 @@ const Sidebar = ({
           href: "reservation-list",
           icon: ListCheck,
         },
-        { name: "Booking History", href: "/booking-history", icon: History },
-        { name: "My Ticket", href: "/my-ticket", icon: Ticket },
+        { name: "Booking History", href: "booking-history", icon: History },
+        { name: "My Ticket", href: "my-ticket", icon: Ticket },
       ],
     },
     {
       label: "Support",
-      items: [
-        { name: "Help Center", href: "/help-center", icon: BadgeInfo },
-        { name: "About Us", href: "/about-us", icon: EqualApproximately },
-      ],
+      items: [{ name: "Help Center", href: "help-center", icon: BadgeInfo }],
     },
   ];
 
